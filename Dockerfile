@@ -3,7 +3,7 @@
 #docker run --rm --volume="$PWD:/go/src/github.com/michalsz/duplicator" -it cobra /bin/sh
 FROM golang:1.15rc1-alpine3.12
 RUN apk add git nano
-RUN go get github.com/spf13/cobra/cobra
+RUN go get -u github.com/spf13/cobra/cobra
 RUN mkdir -p /go/src/github.com/michalsz/duplicator
 WORKDIR /go/src/github.com/michalsz/duplicator
 

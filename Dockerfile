@@ -1,5 +1,9 @@
 ### START ####
 # docker build -t cobra .
+#When mapping volumes, the mapped directory in the container gets wiped out, make sure you dont overwrite
+#THIS WILL NOT WORK, AS IT WIPES OUT COBRA INSTALL DIRECTORY go/src
+#docker run --rm --volume="$PWD:/go" -it cobra /bin/sh
+# THIS WILL WORK, as it maps to a new subdirectory
 #docker run --rm --volume="$PWD:/go/src/github.com/michalsz/duplicator" -it cobra /bin/sh
 FROM golang:1.15rc1-alpine3.12
 RUN apk add git nano
